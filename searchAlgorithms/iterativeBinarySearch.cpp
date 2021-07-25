@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include <iostream>
 using namespace std;
 // position of target x in an array A of size n
 //
 
-int binarySearch(intA[], int n, int x)
+int binarySearch(int A[], int n, int x)
 {
 // search space is A[low ... high]
 int low = 0, high = n - 1;
@@ -51,8 +52,14 @@ return -1;
 }
 
 int main(void){
-    int A[] = {2,5,6,,7,9,10};
+    int A[] = {2,5,6,7,9,10};
     int target = 5;
     int n = sizeof(A)/sizeof(A[0]);
+    int index = binarySearch(A, n, target);
+
+    (index == -1) ? cout << "Element is not present in the array" :
+    cout << "Element is present at index " << index << endl;
+
+    return 0;
 }
 
